@@ -1,17 +1,45 @@
 package org.raoulscode;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+import java.sql.SQLOutput;
+
+public class Main {
+    public static void main() {
+       Book book1 = new Book();
+       book1.setTitle("Atomic Habits");
+       book1.setAuthor("James Clear");
+       book1.setPrice(30.00f);
+
+       Book book2 = new Book();
+       book2.setTitle("Sapiens");
+       book2.setAuthor("Yuval Noah Harari");
+       book2.setPrice(25.00f);
+
+        System.out.println("\nThe first book object is\n");
+        System.out.println(book1);
+        System.out.println("\nthe second book object is\n");
+        System.out.println(book2);
+
+        comparePrices(book1,book2);
+
     }
+
+    private static void comparePrices(Book book1, Book book2){
+        float book1Price = book1.getPrice();
+        float book2Price = book2.getPrice();
+        String priceCmp = "";
+        if(book1Price < book2Price){
+            priceCmp =book1.getTitle()+ "cost less than" + book2.getTitle();
+
+        }else if (book1Price == book2Price){
+            priceCmp = book1.getTitle()+ "costs as much as" + book2.getTitle();
+        }else {
+            priceCmp = book1.getTitle()+" costs more than " + book2.getTitle();
+        }
+        System.out.println(priceCmp);
+
+    }
+
+
+
 }
