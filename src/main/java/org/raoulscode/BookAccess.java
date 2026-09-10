@@ -1,14 +1,9 @@
 package org.raoulscode;
 
 
-import java.sql.SQLOutput;
-
-public class Main {
-    public static void main() {
-       Book book1 = new Book();
-       book1.setTitle("Atomic Habits");
-       book1.setAuthor("James Clear");
-       book1.setPrice(30.00f);
+public class BookAccess {
+    public static void main() throws CloneNotSupportedException {
+       Book book1 = new Book("Atomic Habits", "james Clear", 30.00f);
 
        Book book2 = new Book();
        book2.setTitle("Sapiens");
@@ -21,6 +16,11 @@ public class Main {
         System.out.println(book2);
 
         comparePrices(book1,book2);
+
+        Book book3 =(Book)(book1.clone());
+        System.out.println("The third book cloned object is ");
+        System.out.println(book3);
+
 
     }
 
