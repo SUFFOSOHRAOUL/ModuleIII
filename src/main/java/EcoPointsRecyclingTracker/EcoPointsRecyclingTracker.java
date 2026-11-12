@@ -174,7 +174,7 @@ public class EcoPointsRecyclingTracker {
         } catch (FileNotFoundException e) {
 
             System.out.println("No saved data found. Starting fresh.");
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException | ClassCastException e) {
             // Handle other errors, like if the file is corrupted or unreadable
             System.out.println("Error loading data: " + e.getMessage());
         }
